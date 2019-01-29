@@ -31,7 +31,19 @@ function Game(){
         var crate = prompt("You wake up... you can't move anything but your hands and you cant see a thing.  You hear a door shut near by. /n -move hands /n -go back to sleep /n -yell /n -flex muscles").toLowerCase();
         
         if(crate == "move hands" || crate == "move"){
-            var crateMove = prompt("You move your hands around.  The wall and ceiling feels like wood.  You realize your in a wooded crate. You still cant see and can only move your hands. /n -move hands again /n -go back to sleep /n -yell /n -flex muscles");
+            var crateMove = prompt("You move your hands around.  The wall and ceiling feels like wood.  You realize your in a wooded crate. You still can't see and can only move your hands. /n -move hands again /n -go back to sleep /n -yell /n -flex muscles").toLowerCase();
+        }
+        
+        if(crate == "yell"){
+            var crateYell = prompt("You yell as loud as you can.  Its silent when you hear a group of people outside the nearby door. The door starts to open. You hear dozen of people walking in.  Your silent. /n -yell again /n -stay silent").toLowerCase();
+        }
+        
+        if(crate == "flex muscles" || crate == "flex"){
+            var crateFlex = prompt("You flex as hard as you can. The wooden crate around you explodes.  Your free. /n -look ").toLowerCase();
+            
+            if(crateFlex == "look"){
+                Wharehouse();
+            }
         }
         
         else if(crate == "go back to sleep" || crate == "sleep"){
@@ -39,18 +51,16 @@ function Game(){
             var resume = confirm("Do you wish to continue?");
             
             if(resume){
-                prompt();
+                Crate();
             }
             else{
                 alert("Game Over!");
-            }
-         
-            if(crate == "flex muscles" || crate == "flex"){
-                var crateFlex = prompt("You flex your muscles.")
             }
             
         }
     }
     
-    
+    function Wharehouse(){
+        var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.")
+    }
 }
