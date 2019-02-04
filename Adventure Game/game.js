@@ -28,6 +28,13 @@ Multiline comment
   //  }
 //}
 
+
+//Javascript Object for an inventory do 4
+var invintory = {
+    coins:10,
+    ammo:0,
+}
+
 Game();
 
 function Game(){
@@ -52,7 +59,6 @@ function Game(){
                 alert("Game Over!");
             } 
         }
-    }
         
         if(crate == "flex muscles" || crate == "flex"){
             var crateFlex = prompt("You flex as hard as you can. The wooden crate around you explodes.  Your free. \n -look ").toLowerCase();
@@ -67,7 +73,7 @@ function Game(){
         }
         
         if(crate == "move hands" || crate == "move"){
-            var crateMove = prompt("You move your hands around.  The wall and ceiling feels like wood.  You realize your in a wooded crate. You still can't see and can only move your hands. \n -move hands again \n -go back to sleep \n -yell \n -flex muscles").toLowerCase();
+            var crateMove = prompt("You move your hands around.  The wall and ceiling feels like wood.  You realize your in a wooded crate. You still can't see and can only move your hands. \n -move hands again \n -go back to sleep \n-yell").toLowerCase();
             
             if(crateMove == "go back to sleep" || crateMove == "sleep"){
                 alert("you fall back asleep.  You dream about your past.  In your past you were super buff.");
@@ -83,9 +89,12 @@ function Game(){
         
             if(crateMove == "move hands again"){
                 var crateMoveAgain = prompt("You move your hands again.  This time you feel a button on the ceiling. \n -press button").toLowerCase();
+            }
             
-             
-        }
+            if(crateMove == "yell"){
+                var crateYell = prompt("You yell as loud as you can.  Its silent when you hear the door open.  Your silent. \n -yell again \n -stay silent").toLowerCase();
+            }
+    
                 if(crateMoveAgain == "press button" || crateMoveAgain == "press"){
                     var pressButton = prompt("You press the button.  The crate explodes around you. \n -look").toLowerCase();
                     
@@ -96,6 +105,16 @@ function Game(){
             } 
     
     function WhareHouse(){
-        var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.")
+        var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.");
     }
+            
+            if(crateYell == "yell again"){
+                var crateYellAgain = prompt("You yell again. Someone shot you while your in the crate. Your dead. Game Over!");
+            }
+            
+            if(crateYell == "stay silent"){
+                var crateStaySilent = prompt("").toLowerCase();
+            }
+        
+}
 }
