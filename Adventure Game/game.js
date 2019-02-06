@@ -72,6 +72,27 @@ function Game(){
             var crateYell = prompt("You yell as loud as you can.  Its silent when you hear the door open.  Your silent. \n -yell again \n -stay silent").toLowerCase();
         }
         
+        if(crateYell == "yell again"){
+            var crateYellAgain = prompt("You yell again. Someone shot you while your in the crate. Your dead. Game Over!");
+        }
+        
+        if(crateYell == "stay silent"){
+            var crateStaySilent = prompt("You hear someone but too hard to hear them.  The door closes.  You have no clue on whats going on when the face of the crate gets torn off. \n -look").toLowerCase();
+        }
+        
+        if(crateStaySilent == "look"){
+            alert("Some guy opened the crate.");
+            var yes = confirm("Do you want to live?");
+            
+            if(yes){
+                WhareHouseWithGuyGuy();
+            }
+            else{
+                alert("The guy re closes the crate and you can't get out and never leave, so you die!");  
+            }   
+        }
+        
+        
         if(crate == "move hands" || crate == "move"){
             var crateMove = prompt("You move your hands around.  The wall and ceiling feels like wood.  You realize your in a wooded crate. You still can't see and can only move your hands. \n -move hands again \n -go back to sleep \n-yell").toLowerCase();
             
@@ -87,7 +108,7 @@ function Game(){
                 }
             }
         
-            if(crateMove == "move hands again"){
+            if(crateMove == "move hands again" || crateMove == "move again"){
                 var crateMoveAgain = prompt("You move your hands again.  This time you feel a button on the ceiling. \n -press button").toLowerCase();
             }
             
@@ -102,19 +123,17 @@ function Game(){
                         WhareHouse();
                     }
                 }
-            } 
-    
-    function WhareHouse(){
-        var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.");
-    }
-            
-            if(crateYell == "yell again"){
-                var crateYellAgain = prompt("You yell again. Someone shot you while your in the crate. Your dead. Game Over!");
             }
-            
-            if(crateYell == "stay silent"){
-                var crateStaySilent = prompt("").toLowerCase();
-            }
+        }
         
-}
+    
+    
+        function WhareHouse(){
+            var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.");
+        }
+    
+    
+        function WhareHouseWithGuy(){
+            var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse.  The guys says he is in the same situation as you. a:How did you get out of your crate? b:What is your name? c:What should we do? \n -a \n -b \n-c");
+    }
 }
