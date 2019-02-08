@@ -77,7 +77,7 @@ function Game(){
         }
         
         if(crateYell == "stay silent"){
-            var crateStaySilent = prompt("You hear someone but too hard to hear them.  The door closes.  You have no clue on whats going on when the face of the crate gets torn off. \n -look").toLowerCase();
+            var crateStaySilent = prompt("You hear someone for a min then the door closes.  You have no clue on whats going on when the face of the crate gets torn off. \n -look").toLowerCase();
         }
         
         if(crateStaySilent == "look"){
@@ -85,7 +85,7 @@ function Game(){
             var yes = confirm("Do you want to live?");
             
             if(yes){
-                WhareHouseWithGuyGuy();
+                WhareHouseWithGuy();
             }
             else{
                 alert("The guy re closes the crate and you can't get out and never leave, so you die!");  
@@ -129,11 +129,21 @@ function Game(){
     
     
         function WhareHouse(){
-            var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.");
+            var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.  You hop off the crates and cages. You see a door to your left and the right. \n -left \n -right");
+            
+            if(wharehouse == "left"){
+                var wharehouseleft = prompt("You open the left door.  You see a bunch of soldier like people.");
+            }
+            
+            if(wharehouse == "right"){
+                var wharehouseright = prompt("You open the right door.  Your in a small room. On the left is a desk that has a gun and ammo on top.  Also there are two more doors, one on the front wall and one on the right.");
+            }
+            
         }
     
     
         function WhareHouseWithGuy(){
-            var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse.  The guys says he is in the same situation as you. a:How did you get out of your crate? b:What is your name? c:What should we do? \n -a \n -b \n-c");
+            var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse on top of crates and cages.  The guys says he is in the same situation as you. -a:How did you get out of your crate? -b:What is your name? -c:What should we do? \n -a \n -b \n-c").toLowerCase();
+            
     }
 }
