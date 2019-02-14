@@ -33,6 +33,8 @@ Multiline comment
 var invintory = {
     coins:10,
     ammo:0,
+    gun:0,
+    matches:0,
 }
 
 Game();
@@ -132,13 +134,33 @@ function Game(){
             var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.  You hop off the crates and cages. You see a door to your left and the right. \n -left \n -right");
             
             if(wharehouse == "left"){
-                var wharehouseleft = prompt("You open the left door.  You see a bunch of soldier like people.");
+                var wharehouseleft = prompt("You open the left door.  You see a bunch of soldier like people.  What do you want to say? \n -hey \n -hi").toLowerCase();
+                
+                if(wharehouseleft == "hey"){
+                    var wharehouselefthey = prompt("You say hey.  The soldier like people all say hey back.  They ask who and why you are here.  You tell them idk I can't remember anything.  They put you on a buss going to a hospital.  You win!!")
+                }
+                
+                if(wharehouseleft == "hi"){
+                    var wharehouselefthi = prompt("You say hi.  They didin't like how you said hi.  Someone with a red hat shoots you.  Your dead.  Game over.")
+                }
             }
             
             if(wharehouse == "right"){
-                var wharehouseright = prompt("You open the right door.  Your in a small room. On the left is a desk that has a gun and ammo on top.  Also there are two more doors, one on the front wall and one on the right.");
+                var wharehouseright = prompt("You open the right door.  Your in a small room. On the left is a desk that has a gun and ammo on top.  Also there are two more doors, one on the front wall and one on the right. \n -pick up gun and ammo ");
+                
+                if(wharehouseright == "pick up gun and ammo" || wharehouseright == "pick up" ){
+                    invintory.gun ++;
+                    invintory.ammo +=10;
+                    alert("You have " +invintory.gun+ " gun and " +invintory.ammo+ " ammo");
+                    Wharehouserightwithgun();
+                
+                }
             }
             
+        }
+                          
+        function Wharehouserightwithgun(){
+            var Wharehouserightwithgun = prompt("Your in a small room.  There are two more doors, one on the front wall and one on the right. \n -doorfront \n -dooright");           
         }
     
     
