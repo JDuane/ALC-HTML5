@@ -30,7 +30,12 @@ Multiline comment
 
 
 //Javascript Object for an inventory do 4
-var invintory = {
+
+var inventoryCheck = function(){
+    alert("\n coins: "+inventory.coins+"\n ammo: "+inventory.ammo+"\n gun: "+inventory.gun+"\n matches: "+inventory.matches);
+}
+
+var inventory = {
     coins:10,
     ammo:0,
     gun:0,
@@ -39,11 +44,13 @@ var invintory = {
 
 Game();
 
+inventoryCheck();
+
 function Game(){
     
     document.write("IMMA SURVIVE");
     var playerName = prompt("what is your name?");
-    alert("Welcom to somewhere " + playerName);
+    alert("Welcom to somewhere... " + playerName);
     
     Crate();
     
@@ -131,7 +138,7 @@ function Game(){
     
     
         function WhareHouse(){
-            var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.  You hop off the crates and cages. You see a door to your left and the right. \n -left \n -right");
+            var wharehouse = prompt("Your in a wharehouse.  A Huge open building.  Your on top of a bunch of other crates and cages.  You hop off the crates and cages. You see a door to your left and the right. \n -left \n -right").toLowerCase();
             
             if(wharehouse == "left"){
                 var wharehouseleft = prompt("You open the left door.  You see a bunch of soldier like people.  What do you want to say? \n -hey \n -hi").toLowerCase();
@@ -146,12 +153,12 @@ function Game(){
             }
             
             if(wharehouse == "right"){
-                var wharehouseright = prompt("You open the right door.  Your in a small room. On the left is a desk that has a gun and ammo on top.  Also there are two more doors, one on the front wall and one on the right. \n -pick up gun and ammo ");
+                var wharehouseright = prompt("You open the right door.  Your in a small room. On the left is a desk that has a gun and ammo on top.  Also there are two more doors, one on the front wall and one on the right. \n -pick up gun and ammo ").toLowerCase();
                 
                 if(wharehouseright == "pick up gun and ammo" || wharehouseright == "pick up" ){
-                    invintory.gun ++;
-                    invintory.ammo +=10;
-                    alert("You have " +invintory.gun+ " gun and " +invintory.ammo+ " ammo");
+                    inventory.gun ++;
+                    inventory.ammo +=10;
+                    alert("You have " +inventory.gun+ " gun and " +inventory.ammo+ " ammo");
                     Wharehouserightwithgun();
                 
                 }
@@ -160,7 +167,19 @@ function Game(){
         }
                           
         function Wharehouserightwithgun(){
-            var Wharehouserightwithgun = prompt("Your in a small room.  There are two more doors, one on the front wall and one on the right. \n -doorfront \n -dooright");           
+            var wharehouseRightWithGun = prompt("Your in a small room.  There are two more doors, one on the front wall and one on the right. \n -doorfront \n -doorRight").toLowerCase();   
+            
+            if (wharehouseRightWithGun == "doorfront"){
+                var wDoorFront = prompt("You walk through the door on the frontwall.  There is no other door in that room.  There is only a table in the room.  There on a table is a pouch.  Inside the pouch there are 30 coins. \n -pick up coins").toLowerCase();
+                
+                if(wDoorFront == "pick up coins" || wDoorFront == "pick up"){
+                    inventory.coins +=30;
+                    alert("you have " +inventory.coins+ " coins");
+                    WharehouseRightTwo();
+                }
+            } 
+            
+            
         }
     
     
@@ -168,4 +187,8 @@ function Game(){
             var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse on top of crates and cages.  The guys says he is in the same situation as you. -a:How did you get out of your crate? -b:What is your name? -c:What should we do? \n -a \n -b \n-c").toLowerCase();
             
     }
+        
+        function WharehouseRightTwo(){
+            var rightTwo = prompt("You pick up the coins then walk back to the room whare you picked up the gun and ammo.  There is one door you havent opened on the right.  \n -inventoryCheck  \n-doorRight").toLowerCase();
+        }
 }
