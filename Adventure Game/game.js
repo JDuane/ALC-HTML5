@@ -167,7 +167,12 @@ function Game(){
         }
                           
         function Wharehouserightwithgun(){
-            var wharehouseRightWithGun = prompt("Your in a small room.  There are two more doors, one on the front wall and one on the right. \n -doorfront \n -doorRight").toLowerCase();   
+            var wharehouseRightWithGun = prompt("Your in a small room.  There are two more doors, one on the front wall and one on the right. \n -doorfront \n -doorright").toLowerCase();  
+            
+            if (wharehouseRightWithGun == "doorright"){
+                var nono = prompt("You cant go through that door at this time...")
+                Wharehouserightwithgun();
+            }
             
             if (wharehouseRightWithGun == "doorfront"){
                 var wDoorFront = prompt("You walk through the door on the frontwall.  There is no other door in that room.  There is only a table in the room.  There on a table is a pouch.  Inside the pouch there are 30 coins. \n -pick up coins").toLowerCase();
@@ -189,6 +194,58 @@ function Game(){
     }
         
         function WharehouseRightTwo(){
-            var rightTwo = prompt("You pick up the coins then walk back to the room whare you picked up the gun and ammo.  There is one door you havent opened on the right.  \n -inventoryCheck  \n-doorRight").toLowerCase();
+            var rightTwo = prompt("You pick up the coins then walk back to the room whare you picked up the gun and ammo.  There is one door you havent opened on the right.  \n-doorright").toLowerCase();
+            
+            if (rightTwo == "doorright"){
+                var gameWheel = prompt("You open the right door.  You see a game spin wheel.  You can spin the wheel if you have 30 coins.  Press Ok to see your invintory.")
+                inventoryCheck();
+                var gameWheelSpin = prompt("Would you like to spin the wheel for 30 coins?  \n -yes  \n -no").toLowerCase();
+                
+                if (gameWheelSpin == "yes"){
+                    var chatter = prompt("Ok then lets spin");
+                    SpinWheel();
+                }
+                
+                if (gameWheelSpin == "no"){
+                    var stuck = prompt("You are stuck in the room so might as well spin the wheel.")
+                    SpinWheel();
+                }
+            }
+        }
+    
+        function SpinWheel(){
+            var SpinP = prompt("Thanks for playin");
+            inventory.coins -=30;
+            alert("you have " +inventory.coins+ " Coins");
+            alert("Spinning... Spinning... Spinning...");
+            var wheelOptions = [Math.floor(Math.random()* 3)];
+            
+            if (wheelOptions = 0){
+                YouWin();
+            }
+            
+            if (wheelOptions = 1){
+                YouDie();
+            }
+            
+            if (wheelOptions = 2){
+                RestartGame();
+            }
+            
+            
+        }
+    
+        function YouWin(){
+        
+            var youWinP = prompt("You got Win game!!!  Congradulations you have won!!!");
+        }
+        
+        function YouDie(){
+            var youDieP = prompt("You got Die.  You die.  Game Over...");
+        }
+    
+        function RestartGame(){
+            var restartGameP = prompt("You got restart game.  you half to restart now bye...");
+            Game();
         }
 }
