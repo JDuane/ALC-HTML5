@@ -42,14 +42,19 @@ var inventory = {
     matches:0,
 }
 
-Game();
 
-inventoryCheck();
+
+Game();
 
 function Game(){
     
     document.write("IMMA SURVIVE");
     var playerName = prompt("what is your name?");
+    
+    while(!confirm("Are you sure you want " +playerName+" as a name?")){
+        playerName = prompt("What name do you want?");
+    }
+    
     alert("Welcom to somewhere... " + playerName);
     
     Crate();
@@ -67,6 +72,10 @@ function Game(){
             else{
                 alert("Game Over!");
             } 
+        }
+        
+        if(crate == "test w"){
+            SpinWheel();
         }
         
         if(crate == "flex muscles" || crate == "flex"){
@@ -191,7 +200,27 @@ function Game(){
         function WhareHouseWithGuy(){
             var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse on top of crates and cages.  The guys says he is in the same situation as you. -a:How did you get out of your crate? -b:What is your name? -c:What should we do? \n -a \n -b \n-c").toLowerCase();
             
+            if (whareHouseWithGuy == "c"){
+                var qc = prompt("We need to get out of here.  I saw someone with a gun.  All I know is this place isint safe and we need to escape. \n escape").toLowerCase();
+            }
+            
+            if (whareHouseWithGuy == "b"){
+                WhatIsYourName();
+            }
+            
+            if (whareHouseWithGuy == "a"){
+                var qa = prompt("I pressed a button in the crate that opend it. Im surprised you could not find yours.  I heard you yell so I came to find you.  -a:What is your name?  -b:What are we doing here? \n -a \n -b").toLowerCase();
+                
+                if (qa == "a"){
+                    WhatIsYourName();
+                }
+            }
+            
     }
+    
+        function WhatIsYourName(){
+            var guysName = prompt("My name is Jack.  Whats yours?  \n -use real name  \n -use fake name").toLowerCase();
+        }
         
         function WharehouseRightTwo(){
             var rightTwo = prompt("You pick up the coins then walk back to the room whare you picked up the gun and ammo.  There is one door you havent opened on the right.  \n-doorright").toLowerCase();
@@ -207,7 +236,7 @@ function Game(){
                 }
                 
                 if (gameWheelSpin == "no"){
-                    var stuck = prompt("You are stuck in the room so might as well spin the wheel.")
+                    var stuck = prompt("You are stuck in the room so might as well spin the wheel.");
                     SpinWheel();
                 }
             }
@@ -220,15 +249,15 @@ function Game(){
             alert("Spinning... Spinning... Spinning...");
             var wheelOptions = [Math.floor(Math.random()* 3)];
             
-            if (wheelOptions = 0){
+            if (wheelOptions == 0){
                 YouWin();
             }
             
-            if (wheelOptions = 1){
+            if (wheelOptions == 1){
                 YouDie();
             }
             
-            if (wheelOptions = 2){
+            if (wheelOptions == 2){
                 RestartGame();
             }
             
