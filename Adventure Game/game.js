@@ -78,6 +78,10 @@ function Game(){
             SpinWheel();
         }
         
+        if(crate == "test"){
+            WharehouseGarage();
+        }
+        
         if(crate == "flex muscles" || crate == "flex"){
             var crateFlex = prompt("You flex as hard as you can. The wooden crate around you explodes.  Your free. \n -look ").toLowerCase();
             
@@ -201,7 +205,11 @@ function Game(){
             var whareHouseWithGuy = prompt("The guy helps you out of the crate.  Your standing in a wharhouse on top of crates and cages.  The guys says he is in the same situation as you. -a:How did you get out of your crate? -b:What is your name? -c:What should we do? \n -a \n -b \n-c").toLowerCase();
             
             if (whareHouseWithGuy == "c"){
-                var qc = prompt("We need to get out of here.  I saw someone with a gun.  All I know is this place isint safe and we need to escape. \n escape").toLowerCase();
+                var qc = prompt("We need to get out of here.  I saw someone with a gun.  All I know is this place isint safe and we need to escape.  The garage door is open.  Lets go. \n escape").toLowerCase();
+                
+                if (qc == "escape"){
+                    GarageEscape();
+                }
             }
             
             if (whareHouseWithGuy == "b"){
@@ -211,6 +219,11 @@ function Game(){
             if (whareHouseWithGuy == "a"){
                 var qa = prompt("I pressed a button in the crate that opend it. Im surprised you could not find yours.  I heard you yell so I came to find you.  -a:What is your name?  -b:What are we doing here? \n -a \n -b").toLowerCase();
                 
+                if(qa == "b"){
+                    var qab = prompt("I have no idea.  Lets just get out of here.  The garage is open lets get out!");
+                    GarageEscape();
+                }
+                
                 if (qa == "a"){
                     WhatIsYourName();
                 }
@@ -219,7 +232,14 @@ function Game(){
     }
     
         function WhatIsYourName(){
-            var guysName = prompt("My name is Jack.  Whats yours?  \n -use real name  \n -use fake name").toLowerCase();
+            var guysName = prompt("My name is Jack.  Whats yours?  \n -use real name").toLowerCase();
+            
+            if(guysName == "use real name"){
+                var guyReply = prompt("Nice to meet you "+playerName+" Well we need to get out of here.  We should probably split up and find our way out.  You go towards the garage door.  Im going to go left.  Right here is our meeting spot.  I found some coins on my way to find you.  Ill give you half.");
+                inventory.coins +=50;
+                alert("you have " +inventory.coins+ " coins");
+                WharehouseGarage();
+            }
         }
         
         function WharehouseRightTwo(){
@@ -277,4 +297,38 @@ function Game(){
             var restartGameP = prompt("You got restart game.  you half to restart now bye...");
             Game();
         }
+    
+    
+    function GarageEscape(){
+        
+        var garageWin = prompt("You two run through the garage and hop on a buss.  You win");
+    }
+    
+    function WharehouseGarage(){
+            
+        var garageMatch = prompt("You run over to the garage door.  As you start looking for a way to open the garage you here a gun shot.  You assume Jack got shot and is dead.  You keep looking for stuff when you come across a vending machine.  Inside are a bunch of matches.  You have " +inventory.coins+ " coins.  One match is one coin.  Would you like to buy some matches? \n -yes \n -no").toLowerCase();
+        
+        if(garageMatch == "yes"){
+            var matchBuy = prompt("How many matches do you want to buy?");
+            
+            while(!confirm("Are you sure you want to buy "+matchBuy+" matches for one coin per match?")){
+                matchBuy = prompt("How many matches do you want to buy then?");
+            }
+            
+            for(i = 1; i<= matchBuy; i++){
+                inventory.matches ++;
+                console.log("You have "+inventory.matches+" matches");
+                inventory.coins -=1 ;
+                console.log("You have "+inventory.coins+" coins");
+            }
+            
+            Burn();
+        }
+    }
+    
+    function Burn(){
+        var idk = prompt
+    }
+    
+    
 }
