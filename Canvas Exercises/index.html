@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    
+        <canvas id="myCanvas" width="500" height="900" style="border:55px solid #121212;background-color:aquamarine">
+        </canvas>
+        <script>
+            //setup canvas
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            //draws rectangle
+            ctx.fillStyle = "#ff0000";
+            ctx.fillRect(0,0, 500,450);
+            //draws line
+            ctx.moveTo(0, 0);
+            ctx.lineTo(500, 900);
+            ctx.stroke();
+            ctx.moveTo(500, 0);
+            ctx.lineTo(0, 900);
+            ctx.stroke();
+            //draw circle
+            ctx.beginPath();
+            ctx.arc(250, 450, 200, 0, 3 * Math.PI);
+            ctx.stroke();
+            //gradient
+            var grd = ctx.createLinearGradient(0, 460, 0, 400);
+            grd.addColorStop(0, "aquamarine");
+            grd.addColorStop(1, "#ff0000");
+            //Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 410, 500, 80);
+        </script>
+        
+    </body>
+</html>
