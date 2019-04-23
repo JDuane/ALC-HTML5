@@ -41,9 +41,27 @@ nav{
     font-family: "Tahoma",sans-serif;
     font-size: 1.5em
 }
+nav ul{
+    list-style:none;
+}
+nav ul li{
+    float:left;
+    padding:5px 15px;
+    border-right:1px dashed blue;
+}
+nav ul li a{
+    color:aqua;
+}
+nav ul li a:hover{
+    background-color: azure;
+    color:aquamarine;
+}
 
 footer{
     width:1000px;
     height:500px;
     background-image: url(https://gifimage.net/wp-content/uploads/2017/11/explosion-sprite-gif-4.gif);
+}
+div.keepOpen{
+    clear:both;
 }
