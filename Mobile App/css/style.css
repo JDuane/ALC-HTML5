@@ -28,6 +28,7 @@ header h1{
     color:white;
     font-family: "Tahoma",sans-serif;
     font-size: 2.5em;
+    text-align: center;
 }
 
 div#content{
@@ -59,7 +60,7 @@ nav ul li a:hover{
 }
 */
 .icon-bar {
-  position:absolute;
+  position:fixed;
   bottom:0;
   width: 100%;
   background-color: #555;
@@ -110,3 +111,26 @@ div.keepOpen{
         text-align:center;
     }
 }*/
+
+div#product_grp{
+    width:auto;
+    margin: auto;
+}
+
+figure.product{
+    width:20%;
+    background-color: lightsteelblue;
+}
+
+figure.product img{
+    display:block;
+    width:auto;
+    margin: auto;
+}
+
+figure.product figcaption{
+    text-align: center;
+    color:black;
+    font-family:monospace;
+    font-size: 18px;
+}
