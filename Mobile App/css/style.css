@@ -14,18 +14,24 @@ body{
 div#container{
     width:100%;
     
-    border:3px solid orange;
+    border:3px solid aliceblue;
     background-color: aliceblue;
 }
 
 header{
     width:91.7%;
     padding:50px;
-    background-color: #121212;
+    background-color: #f8d568;
+}
+
+header img#SpiffintLogo{
+    display: block;
+    margin: auto;
+    width: 50px;
 }
 
 header h1{
-    color:white;
+    color:aliceblue;
     font-family: "Tahoma",sans-serif;
     font-size: 2.5em;
     text-align: center;
@@ -33,7 +39,11 @@ header h1{
 
 div#content{
     width:100%;
-    background-color: #555;
+    background-color: aliceblue;
+}
+
+header h3{
+    
 }
 
 /*
@@ -63,7 +73,7 @@ nav ul li a:hover{
   position:fixed;
   bottom:0;
   width: 100%;
-  background-color: #555;
+  background-color: #f8d568;
   overflow: auto;
 }
 
@@ -78,11 +88,26 @@ nav ul li a:hover{
 }
 
 .icon-bar a:hover {
-  background-color: #121212;
+  background-color: #f8d568;
 }
 
 .active {
-  background-color: #ffa20e;
+  background-color: #8F484D;
+}
+
+div#s_company{
+    width: auto;
+    margin: auto;
+}
+
+figure.company{
+    width: 20%;
+}
+
+figure.company img{
+    display: block;
+    width:400px;
+    margin: 35px;
 }
 
 /*
@@ -113,18 +138,18 @@ div.keepOpen{
 }*/
 
 div#product_grp{
-    width:auto;
+    width: auto;
     margin: auto;
 }
 
 figure.product{
     width:20%;
-    background-color: lightsteelblue;
+    background-color: #8F484D;
 }
 
 figure.product img{
     display:block;
-    width:auto;
+    width: 233px;
     margin: auto;
 }
 
@@ -132,5 +157,7 @@ figure.product figcaption{
     text-align: center;
     color:black;
     font-family:monospace;
-    font-size: 18px;
+    font-size: 12px;
+}
+    
 }
