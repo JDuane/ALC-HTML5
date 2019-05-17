@@ -8,7 +8,7 @@ html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6
 }
 
 body{
-    background-color: darkslategray;
+    background-color: #8F484D;
 }
 
 div#container{
@@ -19,7 +19,7 @@ div#container{
 }
 
 header{
-    width:91.7%;
+    width:auto;
     padding:50px;
     background-color: #f8d568;
 }
@@ -39,11 +39,12 @@ header h1{
 
 div#content{
     width:100%;
+    height: auto;
     background-color: aliceblue;
 }
 
-header h3{
-    
+div#content h3{
+    text-align: center;
 }
 
 /*
@@ -72,6 +73,7 @@ nav ul li a:hover{
 .icon-bar {
   position:fixed;
   bottom:0;
+  left:0;
   width: 100%;
   background-color: #f8d568;
   overflow: auto;
@@ -96,7 +98,8 @@ nav ul li a:hover{
 }
 
 div#s_company{
-    width: auto;
+    max-width: 60%;
+    min-width: 20%;
     margin: auto;
 }
 
@@ -106,7 +109,7 @@ figure.company{
 
 figure.company img{
     display: block;
-    width:400px;
+    width:100px;
     margin: 35px;
 }
 
@@ -138,19 +141,27 @@ div.keepOpen{
 }*/
 
 div#product_grp{
-    width: auto;
+    max-width: 60%;
+    min-width: 20%;
     margin: auto;
+    
 }
 
 figure.product{
-    width:20%;
+    display: block;
+    float:left;
+    width:center;
+    min-width:30%;
+    max-width: 45%;
     background-color: #8F484D;
+    
 }
 
 figure.product img{
     display:block;
-    width: 233px;
+    width: 160px;
     margin: auto;
+    
 }
 
 figure.product figcaption{
@@ -158,6 +169,34 @@ figure.product figcaption{
     color:black;
     font-family:monospace;
     font-size: 12px;
+    background-color: aliceblue;
+    border: solid 2px;
 }
     
 }
+
+
+
+@media screen and (max-width: 1200px) {
+	figure.product{
+		float:none;
+		margin:10px auto;
+		min-width:50%;
+		max-width:100%;
+		background-color: aliceblue;
+		border-radius:5%;
+	}
+    
+}
+	
+
+	 legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family: ;
+		color:black;
+	}
+    
+
+
